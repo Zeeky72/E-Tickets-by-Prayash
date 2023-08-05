@@ -1,0 +1,186 @@
+﻿@using eTickets.Data.ViewModels;
+@model SeatBookingViewModel;
+
+@{
+    ViewData["Title"] = "Seat Selection of " + @Model.MovieName;
+}
+@functions {
+    // Helper method to convert numeric row values to alphabets (A, B, C, ...).
+    public string GetRowLabel(int row)
+    {
+        return ((char)(64 + row)).ToString();
+    }
+ }
+<style>
+    /* ... Existing CSS styles ... */
+
+    /* Additional style for row labels */
+    .row-label {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-weight: bold;
+        text-align: center;
+        border: 1px solid #ccc;
+        background-color: #f2f2f2;
+    }
+
+    /* Style for buttons */
+    .seat-button {
+        width: 60px;
+        height: 60px;
+        margin: 5px;
+        text-align: center;
+        line-height: 60px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px; /* Add some border radius to make the buttons look nicer */
+        font-size: 16px; /* Increase the font size for better readability */
+    }
+
+    .seat-button.booked {
+        background-color: #d9534f;
+        color: #fff;
+    }
+
+    .seat-button.available {
+        background-color: #5cb85c;
+        color: #fff;
+    }
+     .seat-button.selected {
+        background-color: #007bff; /* Change the color for selected seats */
+    }
+
+    /* Add some spacing between rows */
+    .row {
+        margin-bottom: 10px;
+    }
+
+    /* Center the seat layout */
+    .seat-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Style the container of the seat layout */
+    .seat-layout-container {
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #f2f2f2;
+    }
+
+    /* Center the confirmation button */
+    .btn-primary {
+        display: block;
+        margin: 20px auto;
+    }
+
+    .seat-button.selected {
+        background-color: purple;
+        color: #fff;
+    }
+</style>
+
+<h2>Seat Selection of @Model.MovieName:</h2>
+<div>
+    <form method="post" asp-action="BookSeats" asp-controller="SeatSelection">
+        @Html.AntiForgeryToken()
+        <input  type="hidden" name="movieId" value="@Model.MovieId" />
+        <input  type="hidden" name="userId" value="@Model.UserId" />
+
+        <input type="hidden" name="price" value="@Model.Price" />
+
+        <input  type="hidden" id="selectedSeatsInput" name="selectedSeatss" value="" />
+
+        <div class="seat-layout-container">
+            <div class="seat-layout">
+                <div class="row">
+                    <div class="row-label"></div>
+                    @for (int col = 1; col <= 10; col++)
+                    {
+                        <div class="row-label">@col.ToString("D2")</div>
+                    }
+                </div>
+
+                @for (int row = 1; row <= 10; row++)
+                {
+                    <div class="row">
+                        <div class="row-label">@GetRowLabel(row)</div>
+
+                        @for (int col = 1; col <= 10; col++)
+                        {
+                            char rowLabel = GetRowLabel(row)[0];
+                            var seat = Model.AvailableSeats.FirstOrDefault(s => s.Row == rowLabel && s.Column == col);
+                            string seatStatus = seat != null ? (seat.IsBooked ? "booked" : "available") : "empty";
+                            <button type="button" class="seat-button @seatStatus" data-row="@rowLabel" data-col="@col">
+                                @($"{GetRowLabel(row)}-{col:D2}")
+                            </button>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div>
+            <strong>Selected Seats:</strong>
+            <span id="selectedSeatsDisplay"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Book Selected Seats</button>
+    </form>
+</div>
+
+<script>
+    // JavaScript to handle seat selection
+    const selectedSeats = [];
+
+    function updateSelectedSeatsDisplay() {
+        const selectedSeatsDisplay = document.querySelector('#selectedSeatsDisplay');
+        selectedSeatsDisplay.textContent = selectedSeats.map(seat => `${seat.row}-${seat.col}`).join(', ');
+        console.log('Prayash from selected');
+        selectedSeatsInput.value = selectedSeats.map(seat => `${seat.row}-${seat.col}`).join(',');
+    }
+
+    function toggleSeatStatus(seatButton, row, col) {
+        seatButton.classList.toggle('selected');
+
+        const seatIndex = selectedSeats.findIndex(s => s.row === row && s.col === col);
+
+        if (seatButton.classList.contains('selected')) {
+            if (seatIndex === -1) {
+                selectedSeats.push({ row, col });
+            }
+        } else {
+            if (seatIndex !== -1) {
+                selectedSeats.splice(seatIndex, 1);
+            }
+        }
+
+        updateSelectedSeatsDisplay();
+    }
+
+    document.querySelectorAll('.seat-button.available').forEach(seat => {
+        const rowLabel = seat.getAttribute('data-row');
+        const col = seat.getAttribute('data-col');
+
+        seat.addEventListener('click', () => {
+            toggleSeatStatus(seat, rowLabel, col);
+        });
+    });
+    console.log('Form selection and script setup');
+    const form = document.querySelector('form');
+    console.log(form);
+    form.addEventListener('submit', () => {
+        const selectedSeatsInput = document.getElementById('selectedSeatsInput');
+        selectedSeatsInput.value = selectedSeats.map(seat => `${seat.row}-${seat.col}`).join(',');
+        console.log(selectedSeatsInput.value);
+        console.log('Prayash');
+    });
+</script>
+
+
+
+

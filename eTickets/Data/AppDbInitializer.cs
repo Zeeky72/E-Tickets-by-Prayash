@@ -27,33 +27,33 @@ namespace eTickets.Data
                     {
                         new Cinema()
                         {
-                            Name = "Cinema 1",
+                            Name = "Penn Cinema",
                             Logo = "http://dotnethow.net/images/cinemas/cinema-1.jpeg",
-                            Description = "This is the description of the first cinema"
+                            Description = "Established in 2006. Penn Cinema is a family-owned and independently-operated movie theater. "
                         },
                         new Cinema()
                         {
-                            Name = "Cinema 2",
-                            Logo = "http://dotnethow.net/images/cinemas/cinema-2.jpeg",
-                            Description = "This is the description of the first cinema"
+                            Name = "Red Chillies Entertainment",
+                            Logo = "https://upload.wikimedia.org/wikipedia/en/2/21/Red_Chillies_Entertainment_logo.png",
+                            Description = "Red Chillies Entertainment is an Indian visual effects, production and distribution company established by actor Shah Rukh Khan and his wife Gauri Khan in 2002."
                         },
                         new Cinema()
                         {
-                            Name = "Cinema 3",
-                            Logo = "http://dotnethow.net/images/cinemas/cinema-3.jpeg",
-                            Description = "This is the description of the first cinema"
+                            Name = "Paramount Cinemas",
+                            Logo = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Paramount_Global_Logo.svg/330px-Paramount_Global_Logo.svg.png",
+                            Description = "Paramount Media Networks (founded as MTV Networks in 1984 and known under this name until 2011) is an American mass media division."
                         },
                         new Cinema()
                         {
-                            Name = "Cinema 4",
-                            Logo = "http://dotnethow.net/images/cinemas/cinema-4.jpeg",
-                            Description = "This is the description of the first cinema"
+                            Name = "Dharma Production",
+                            Logo = "https://upload.wikimedia.org/wikipedia/en/thumb/0/02/Dharma_Production_logo.png/300px-Dharma_Production_logo.png",
+                            Description = "Dharma Productions Pvt. Ltd. is an Indian film production and distribution company established by Yash Johar in 1979."
                         },
                         new Cinema()
                         {
-                            Name = "Cinema 5",
-                            Logo = "http://dotnethow.net/images/cinemas/cinema-5.jpeg",
-                            Description = "This is the description of the first cinema"
+                            Name = "Eros International",
+                            Logo = "https://upload.wikimedia.org/wikipedia/en/e/ec/Eros_International_logo.jpg",
+                            Description = "Eros International Media Ltd (also known as Eros India) is an Indian motion picture production and distribution company, based and originated in Mumbai, India."
                         },
                     });
                     context.SaveChanges();
@@ -65,34 +65,40 @@ namespace eTickets.Data
                     {
                         new Actor()
                         {
-                            FullName = "Actor 1",
+                            FullName = "Rajinikanth",
                             Bio = "This is the Bio of the first actor",
-                            ProfilePictureURL = "http://dotnethow.net/images/actors/actor-1.jpeg"
+                            ProfilePictureURL = "Shivaji Rao Gaikwad(born 12 December 1950), known professionally as Rajinikanth."
 
                         },
                         new Actor()
                         {
-                            FullName = "Actor 2",
-                            Bio = "This is the Bio of the second actor",
-                            ProfilePictureURL = "http://dotnethow.net/images/actors/actor-2.jpeg"
+                            FullName = "Akshay Kumar",
+                            Bio = "Rajiv Hari Om Bhatia (born 9 September 1967) known professionally as Akshay Kumar.",
+                            ProfilePictureURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Akshay_Kumar.jpg/330px-Akshay_Kumar.jpg"
                         },
                         new Actor()
                         {
-                            FullName = "Actor 3",
-                            Bio = "This is the Bio of the second actor",
-                            ProfilePictureURL = "http://dotnethow.net/images/actors/actor-3.jpeg"
+                            FullName = "Samantha Ruth Prabhu",
+                            Bio = "Samantha began her professional film career with Gautham Vasudev Menon's Telugu film.",
+                            ProfilePictureURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Samantha_from_SVSC_movie.png/330px-Samantha_from_SVSC_movie.png"
                         },
                         new Actor()
                         {
-                            FullName = "Actor 4",
-                            Bio = "This is the Bio of the second actor",
-                            ProfilePictureURL = "http://dotnethow.net/images/actors/actor-4.jpeg"
+                            FullName = "Kareena Kapoor",
+                            Bio = "Kareena Kapoor Khan (born 21 September 1980) is an Indian actress .",
+                            ProfilePictureURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Kareena_Kapoor_at_TOIFA16.jpg/330px-Kareena_Kapoor_at_TOIFA16.jpg"
                         },
                         new Actor()
                         {
-                            FullName = "Actor 5",
-                            Bio = "This is the Bio of the second actor",
-                            ProfilePictureURL = "http://dotnethow.net/images/actors/actor-5.jpeg"
+                            FullName = "Yash",
+                            Bio = "Naveen Kumar Gowda (born 8 January 1986), better known by his stage name Yash.",
+                            ProfilePictureURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Yash_promoting_KGF_2.jpg/330px-Yash_promoting_KGF_2.jpg"
+                        },
+                        new Actor()
+                        {
+                            FullName = "Shah Rukh Khan",
+                            Bio = "Shah Rukh Khan (born 2 November 1965), also known by the initialism SRK.",
+                            ProfilePictureURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Shah_Rukh_Khan_graces_the_launch_of_the_new_Santro.jpg/330px-Shah_Rukh_Khan_graces_the_launch_of_the_new_Santro.jpg"
                         }
                     });
                     context.SaveChanges();
@@ -104,34 +110,34 @@ namespace eTickets.Data
                     {
                         new Producer()
                         {
-                            FullName = "Producer 1",
-                            Bio = "This is the Bio of the first actor",
-                            ProfilePictureURL = "http://dotnethow.net/images/producers/producer-1.jpeg"
+                            FullName = "Tom Cruise",
+                            Bio = "Tom Cruise, is an American actor and producer.",
+                            ProfilePictureURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Tom_Cruise_by_Gage_Skidmore_2.jpg/330px-Tom_Cruise_by_Gage_Skidmore_2.jpg"
 
                         },
                         new Producer()
                         {
-                            FullName = "Producer 2",
-                            Bio = "This is the Bio of the second actor",
-                            ProfilePictureURL = "http://dotnethow.net/images/producers/producer-2.jpeg"
+                            FullName = "Jerome Leon Bruckheimer ",
+                            Bio = "Jerome Leon Bruckheimer (born September 21, 1943) is an American film and television producer.",
+                            ProfilePictureURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/JerryBruckheimerHWOFJune2013.jpg/330px-JerryBruckheimerHWOFJune2013.jpg"
                         },
                         new Producer()
                         {
-                            FullName = "Producer 3",
-                            Bio = "This is the Bio of the second actor",
-                            ProfilePictureURL = "http://dotnethow.net/images/producers/producer-3.jpeg"
+                            FullName = "Karan Johar",
+                            Bio = "Karan Johar  is an Indian filmmaker and television personality.",
+                            ProfilePictureURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Karan_Johar_walks_the_ramp_for_Shane_and_Falguni_Peacock.jpg/330px-Karan_Johar_walks_the_ramp_for_Shane_and_Falguni_Peacock.jpg"
                         },
                         new Producer()
                         {
-                            FullName = "Producer 4",
-                            Bio = "This is the Bio of the second actor",
-                            ProfilePictureURL = "http://dotnethow.net/images/producers/producer-4.jpeg"
+                            FullName = "Siddharth Roy Kapur",
+                            Bio = "Siddharth Roy Kapur (born 2 August 1974) is an Indian film producer and the founder and managing director of Roy Kapur Films.",
+                            ProfilePictureURL = "https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Siddharth_Roy_Kapur_1.jpg/330px-Siddharth_Roy_Kapur_1.jpg"
                         },
                         new Producer()
                         {
-                            FullName = "Producer 5",
-                            Bio = "This is the Bio of the second actor",
-                            ProfilePictureURL = "http://dotnethow.net/images/producers/producer-5.jpeg"
+                            FullName = "Basil Iwanyk",
+                            Bio = "Basil William Iwanyk (born January 4, 1970) is an American film producer.",
+                            ProfilePictureURL = "http://dotnethow.net/images/producers/producer-1.jpeg"
                         }
                     });
                     context.SaveChanges();
@@ -143,76 +149,125 @@ namespace eTickets.Data
                     {
                         new Movie()
                         {
-                            Name = "Life",
-                            Description = "This is the Life movie description",
-                            Price = 39.50,
-                            ImageURL = "http://dotnethow.net/images/movies/movie-3.jpeg",
+                            Name = "2.0",
+                            Description = "2.0 is a 2018 Indian Tamil-language 3D science-fantasy action film directed by S. Shankar, co-written with B. Jeyamohan and Madhan Karky.",
+                            Price = 399.50,
+                            ImageURL = "https://upload.wikimedia.org/wikipedia/en/c/cf/2.0_film_poster.jpg",
                             StartDate = DateTime.Now.AddDays(-10),
-                            EndDate = DateTime.Now.AddDays(10),
+                            EndDate = DateTime.Now.AddDays(20),
                             CinemaId = 3,
                             ProducerId = 3,
-                            MovieCategory = MovieCategory.Documentary
+                            MovieCategory = MovieCategory.Action
                         },
-                        new Movie()
+                          new Movie()
                         {
-                            Name = "The Shawshank Redemption",
-                            Description = "This is the Shawshank Redemption description",
-                            Price = 29.50,
-                            ImageURL = "http://dotnethow.net/images/movies/movie-1.jpeg",
+                            Name = "K.G.F: Chapter 2",
+                            Description = "K.G.F: Chapter 2 is a 2022 Kannada-language period action film directed by Prashanth Neel, produced by Vijay Kiragandur under Hombale.",
+                            Price = 599.50,
+                            ImageURL = "https://upload.wikimedia.org/wikipedia/en/d/d0/K.G.F_Chapter_2.jpg",
                             StartDate = DateTime.Now,
-                            EndDate = DateTime.Now.AddDays(3),
+                            EndDate = DateTime.Now.AddDays(30),
                             CinemaId = 1,
                             ProducerId = 1,
                             MovieCategory = MovieCategory.Action
                         },
+
                         new Movie()
                         {
-                            Name = "Ghost",
-                            Description = "This is the Ghost movie description",
-                            Price = 39.50,
-                            ImageURL = "http://dotnethow.net/images/movies/movie-4.jpeg",
+                            Name = "Good Newwz",
+                            Description = "Good Newwz is a 2019 Indian Hindi-language comedy-drama film directed by Raj Mehta, produced by Dharma Productions and Cape of Good Films.",
+                            Price = 299.50,
+                            ImageURL = "https://upload.wikimedia.org/wikipedia/en/7/76/Good_Newwz_film_poster.jpg",
                             StartDate = DateTime.Now,
-                            EndDate = DateTime.Now.AddDays(7),
+                            EndDate = DateTime.Now.AddDays(30),
+                            CinemaId = 1,
+                            ProducerId = 1,
+                            MovieCategory = MovieCategory.Drama
+                        },
+                        new Movie()
+                        {
+                            Name = "The Nun",
+                            Description = "The Nun (†HE NUИ) is a 2018 American gothic supernatural horror film. Directed by Corin Hardy, written by Gary Dauberman and James Wan.",
+                            Price = 199.50,
+                            ImageURL = "https://upload.wikimedia.org/wikipedia/en/3/34/TheNunPoster.jpg",
+                            StartDate = DateTime.Now,
+                            EndDate = DateTime.Now.AddDays(70),
                             CinemaId = 4,
                             ProducerId = 4,
                             MovieCategory = MovieCategory.Horror
                         },
                         new Movie()
                         {
-                            Name = "Race",
-                            Description = "This is the Race movie description",
-                            Price = 39.50,
-                            ImageURL = "http://dotnethow.net/images/movies/movie-6.jpeg",
+                            Name = "14 Peaks",
+                            Description = "14 Peaks: Nothing Is Impossible is a gripping 2021 documentary about Nirmal Purja's quest to conquer all 14 world's 8,000-meter peaks.",
+                            Price = 399.50,
+                            ImageURL = "https://upload.wikimedia.org/wikipedia/en/e/ed/14_Peaks-_Nothing_Is_Impossible.jpg",
                             StartDate = DateTime.Now.AddDays(-10),
-                            EndDate = DateTime.Now.AddDays(-5),
+                            EndDate = DateTime.Now.AddDays(50),
                             CinemaId = 1,
                             ProducerId = 2,
                             MovieCategory = MovieCategory.Documentary
                         },
-                        new Movie()
+                              new Movie()
                         {
-                            Name = "Scoob",
-                            Description = "This is the Scoob movie description",
-                            Price = 39.50,
-                            ImageURL = "http://dotnethow.net/images/movies/movie-7.jpeg",
-                            StartDate = DateTime.Now.AddDays(-10),
-                            EndDate = DateTime.Now.AddDays(-2),
+                            Name = "The Shawshank Redemption",
+                            Description = " 'The Shawshank Redemption' is a timeless 1994 drama film. Directed by Frank Darabont, it follows a man's journey through hope, friendship, and redemption while imprisoned.",
+                            Price = 29.50,
+                            ImageURL = "http://dotnethow.net/images/movies/movie-1.jpeg",
+                            StartDate = DateTime.Now,
+                            EndDate = DateTime.Now.AddDays(3),
                             CinemaId = 1,
-                            ProducerId = 3,
-                            MovieCategory = MovieCategory.Cartoon
+                            ProducerId = 1,
+                            MovieCategory = MovieCategory.Drama
                         },
                         new Movie()
                         {
-                            Name = "Cold Soles",
-                            Description = "This is the Cold Soles movie description",
-                            Price = 39.50,
-                            ImageURL = "http://dotnethow.net/images/movies/movie-8.jpeg",
+                            Name = "Jawan",
+                            Description = "Jawan: Atlee's gripping Hindi action-thriller, Gauri Khan's production under Red Chillies Entertainment, showcases Atlee's Hindi directorial debut.",
+                            Price = 399.50,
+                            ImageURL = "https://upload.wikimedia.org/wikipedia/en/3/39/Jawan_film_poster.jpg",
+                            StartDate = DateTime.Now.AddDays(20),
+                            EndDate = DateTime.Now.AddDays(90),
+                            CinemaId = 1,
+                            ProducerId = 3,
+                            MovieCategory = MovieCategory.Action
+                        },
+                        new Movie()
+                        {
+                            Name = "Mission: Impossible",
+                            Description = "Mission: Impossible - Dead Reckoning Part One is a 2023 American spy action film directed by Christopher McQuarrie, co-written with Erik Jendresen.",
+                            Price = 399.50,
+                            ImageURL = "https://upload.wikimedia.org/wikipedia/en/e/ed/Mission-_Impossible_%E2%80%93_Dead_Reckoning_Part_One_poster.jpg",
                             StartDate = DateTime.Now.AddDays(3),
                             EndDate = DateTime.Now.AddDays(20),
                             CinemaId = 1,
                             ProducerId = 5,
-                            MovieCategory = MovieCategory.Drama
-                        }
+                            MovieCategory = MovieCategory.Action
+                        },
+                          new Movie()
+                        {
+                            Name = "Pathaan",
+                            Description = "Produced by Aditya Chopra of Yash Raj Films, the film began principal photography in November 2020 in Mumbai.",
+                            Price = 399.50,
+                            ImageURL = "https://th.bing.com/th/id/OIP.nvy7jIzrCQsQrpHpLz5t6wHaNN?w=115&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+                            StartDate = DateTime.Now.AddDays(-30),
+                            EndDate = DateTime.Now.AddDays(-10),
+                            CinemaId = 1,
+                            ProducerId = 5,
+                            MovieCategory = MovieCategory.Action
+                        },  
+                        new Movie()
+                        {
+                            Name = "Pathaan",
+                            Description = "Oppenheimer is a 2023 epic biographical thriller film directed by Christopher Nolan, based on the 2005 biography American Prometheus.",
+                            Price = 799.50,
+                            ImageURL = "https://upload.wikimedia.org/wikipedia/en/4/4a/Oppenheimer_%28film%29.jpg",
+                            StartDate = DateTime.Now.AddDays(30),
+                            EndDate = DateTime.Now.AddDays(60),
+                            CinemaId = 1,
+                            ProducerId = 5,
+                            MovieCategory = MovieCategory.Documentary
+                        },
                     });
                     context.SaveChanges();
                 }
@@ -339,7 +394,7 @@ namespace eTickets.Data
                 string adminUserEmail = "admin@etickets.com";
 
                 var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
-                if(adminUser == null)
+                if (adminUser == null)
                 {
                     var newAdminUser = new ApplicationUser()
                     {
@@ -367,6 +422,21 @@ namespace eTickets.Data
                     };
                     await userManager.CreateAsync(newAppUser, "Coding@1234?");
                     await userManager.AddToRoleAsync(newAppUser, UserRoles.User);
+                }
+
+                adminUserEmail = "Prayash@gmail.com";
+                var adminUser2 = await userManager.FindByEmailAsync(adminUserEmail);
+                if (adminUser2 == null)
+                {
+                    var newAdminUser = new ApplicationUser()
+                    {
+                        FullName = "Prayash Poudel",
+                        UserName = "prayash72",
+                        Email = adminUserEmail,
+                        EmailConfirmed = true
+                    };
+                    await userManager.CreateAsync(newAdminUser, "Prayash@123");
+                    await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
                 }
             }
         }

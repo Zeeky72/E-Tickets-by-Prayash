@@ -21,7 +21,7 @@ namespace eTickets.Models
         [Required(ErrorMessage = "Description is required")]
         public string Description { get; set; }
 
-        [Display(Name = "Price in $")]
+        [Display(Name = "Price in ₹")]
         [Required(ErrorMessage = "Price is required")]
         public double Price { get; set; }
 
@@ -53,5 +53,6 @@ namespace eTickets.Models
         [Display(Name = "Select a producer")]
         [Required(ErrorMessage = "Movie producer is required")]
         public int ProducerId { get; set; }
+
     }
 }

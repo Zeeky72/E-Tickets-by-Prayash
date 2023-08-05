@@ -1,4 +1,5 @@
 ﻿using eTickets.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -26,7 +27,20 @@ namespace eTickets.Data
             modelBuilder.Entity<Actor_Movie>().HasOne(m => m.Actor).WithMany(am => am.Actors_Movies).HasForeignKey(m => m.ActorId);
 
 
-            base.OnModelCreating(modelBuilder);
+
+            //    modelBuilder.Entity<SeatBooking>()
+            //.HasKey(sb => sb.Id); // Configure Id as the primary key
+
+
+
+            // Configure IdentityUserLogin as a keyless entity
+            modelBuilder.Entity<IdentityUserLogin<string>>().HasNoKey();
+
+            modelBuilder.Entity<IdentityUserRole<string>>().HasNoKey();
+
+
+            modelBuilder.Entity<IdentityUserToken<string>>().HasNoKey();
+
         }
 
         public DbSet<Actor> Actors { get; set; }
@@ -34,6 +48,7 @@ namespace eTickets.Data
         public DbSet<Actor_Movie> Actors_Movies { get; set; }
         public DbSet<Cinema> Cinemas { get; set; }
         public DbSet<Producer> Producers { get; set; }
+        public DbSet<SeatBooking> SeatBookings { get; set; }
 
 
         //Orders related tables

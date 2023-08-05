@@ -1,4 +1,4 @@
-﻿@inject UserManager<ApplicationUser> UserManager; 
+﻿@inject UserManager<ApplicationUser> UserManager;
 
 @if (!User.Identity.IsAuthenticated)
 {
@@ -17,13 +17,23 @@ else
     @*User profile section*@
     <div class="dropdown">
         <button class="btn btn-outline-success dropdown-toggle" type="button" id="profile-btn" data-toggle="dropdown"
-                aria-expanded="false">
+            aria-expanded="false">
             <i class="bi bi-person-badge"></i> Hello @UserManager.GetUserName(User)
         </button>
         <ul class="dropdown-menu" aria-labelledby="profile-btn">
             <li>
                 <a class="dropdown-item" asp-controller="Orders" asp-action="Index">
                     <i class="bi bi-list"></i> Orders
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" asp-controller="Account" asp-action="UsersUpdate">
+                    <i class="bi bi-list"></i> Update Profile
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" asp-controller="Account" asp-action="UsersEmailUpdate">
+                    <i class="bi bi-list"></i> Update Email
                 </a>
             </li>
 

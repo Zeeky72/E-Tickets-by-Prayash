@@ -34,5 +34,6 @@ namespace eTickets.Models
         public int ProducerId { get; set; }
         [ForeignKey("ProducerId")]
         public Producer Producer { get; set; }
+
     }
 }

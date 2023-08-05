@@ -32,7 +32,7 @@ namespace eTickets.Data.Cart
             return new ShoppingCart(context) { ShoppingCartId = cartId };
         }
 
-        public void AddItemToCart(Movie movie)
+        public void AddItemToCart(Movie movie,int amt)
         {
             var shoppingCartItem = _context.ShoppingCartItems.FirstOrDefault(n => n.Movie.Id == movie.Id && n.ShoppingCartId == ShoppingCartId);
 
@@ -42,7 +42,7 @@ namespace eTickets.Data.Cart
                 {
                     ShoppingCartId = ShoppingCartId,
                     Movie = movie,
-                    Amount = 1
+                    Amount = amt
                 };
 
                 _context.ShoppingCartItems.Add(shoppingCartItem);

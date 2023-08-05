@@ -25,11 +25,12 @@
                 @foreach (var item in Model.ShoppingCart.ShoppingCartItems)
                 {
                     <tr>
-                        <td class="align-middle">@item.Amount</td>
+                        @*<td class="align-middle">@item.Amount</td>*@
+                        <td class="align-middle">@Model.NoOfSeats</td>
                         <td class="align-middle">@item.Movie.Name</td>
                         <td class="align-middle">@item.Movie.Price.ToString("c")</td>
-                        <td class="align-middle">@((item.Amount*item.Movie.Price).ToString("c"))</td>
-                        <td class="align-middle">
+                        <td class="align-middle">@Model.ShoppingCartTotal.ToString("c")</td>
+                       @* <td class="align-middle">
                             <a class="text-danger" asp-controller="Orders" asp-action="RemoveItemFromShoppingCart"
                                asp-route-id="@item.Movie.Id">
                                 <i class="bi bi-cart-dash"></i>
@@ -39,7 +40,7 @@
                                asp-route-id="@item.Movie.Id">
                                 <i class="bi bi-cart-plus"></i>
                             </a>
-                        </td>
+                        </td>*@
                     </tr>
                 }
             </tbody>
@@ -62,9 +63,9 @@
                     </a>*@
                 <div id="paypal-btn"></div>
                 <span style="padding:5px"></span>
-                <a class="btn btn-outline-success" asp-controller="Movies" asp-action="Index">
+              @*  <a class="btn btn-outline-success" asp-controller="Movies" asp-action="Index">
                     Add more items
-                </a>
+                </a>*@
             </div>
         </div>
 
@@ -83,7 +84,7 @@
             //Configure environment
             env: 'sandbox',
             client: {
-                sandbox: 'AcKRtgL4i68EZ2ZYuYUx3ilihAg2YhL5dtF_m19A8MjBWVOn6ewNS4M_uV8gA3xi98zTcUq38gUHbVFx'
+                    sandbox: 'AZzpVgAohY0wAydkANatLcxK6C1Vx9tx12Ko835N1Q86gDKpX4W8veXRU1Ml70EUU1UY4tK0O-4SYfGp'
             },
 
             //Customize button
@@ -109,10 +110,22 @@
 
             //Execute the payment
             onAuthorize: function (data, actions) {
+                var userId = '@Model.UserId';
+                var movieId = @Model.MovieId;
+                var totalPrice = '@Model.ShoppingCartTotal';
+                var noOfSeats = @Model.NoOfSeats;
+                var selectedSeats = '@Model.SelectedSeats';
+
                 return actions.payment.execute().then(function () {
-                    var url = '@Url.Action("CompleteOrder", "Orders", new { })';
+                    var url = '@Url.Action("CompleteOrder", "Orders")' +
+                        '?userId=' + encodeURIComponent(userId) +
+                        '&movieId=' + encodeURIComponent(movieId) +
+                        '&totalPrice=' + encodeURIComponent(totalPrice) +
+                        '&noOfSeats=' + encodeURIComponent(noOfSeats)+
+                        '&selectedSeats=' + encodeURIComponent(selectedSeats);
                     window.location.href = url;
                 });
+
             }
 
         }, '#paypal-btn')

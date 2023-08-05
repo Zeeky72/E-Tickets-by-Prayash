@@ -19,19 +19,28 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model)
+                @foreach (var user in Model)
                 {
-                <tr>
-                    <td class="align-middle">
-                        @Html.DisplayFor(modelItem => item.FullName)
-                    </td>
-                    <td class="align-middle">
-                        @Html.DisplayFor(modelItem => item.UserName)
-                    </td>
-                    <td class="align-middle">
-                        @Html.DisplayFor(modelItem => item.Email)
-                    </td>
-                </tr>
+                    <tr>
+                        <td class="align-middle">
+                            @Html.DisplayFor(modelItem => user.FullName)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(modelItem => user.UserName)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(modelItem => user.Email)
+                        </td>
+                        <td class="align-middle">
+                            <form method="post" asp-action="Users">
+                                <input type="hidden" name="userId" value="@user.Id" />
+                                <input type="hidden" name="newStatus" value="@(user.EmailConfirmed ? "false" : "true")" />
+                                <button type="submit" class="btn @(user.EmailConfirmed ? "btn-success" : "btn-danger")">
+                                    @(user.EmailConfirmed ? "Active" : "Block")
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
                 }
             </tbody>
 

@@ -4,6 +4,20 @@
     ViewData["Title"] = "Movie details";
 }
 
+<style>
+    /* Apply border-radius and background image to create a filled circle */
+    .rounded-image {
+        border-radius: 50%;
+        overflow: hidden;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 150px;
+        height: 150px;
+        margin: 10px; /* Add margin to create a gap between images */
+    }
+</style>
+
 <div class="row">
     <div class="col-md-8 offset-2">
         <div class="card mb-12">
@@ -60,14 +74,13 @@
                                 @foreach (var actor in Model.Actors_Movies)
                                 {
                                     <div class="column text-center">
-                                        <img class="border-info rounded-circle" src="@actor.Actor.ProfilePictureURL" style="max-width: 150px" />
+                                        <div class="rounded-image" style="background-image: url('@actor.Actor.ProfilePictureURL')"></div>
                                         <br />
                                         <a asp-controller="Actors" asp-action="Details" asp-route-id="@actor.ActorId">@actor.Actor.FullName</a>
                                     </div>
                                 }
                             </div>
                         </p>
-
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -76,8 +89,8 @@
                             <a class="btn btn-outline-primary float-right" asp-action="Index">
                                 Back to List
                             </a>
-                            <a class="btn btn-success text-white  @((DateTime.Now > Model.EndDate) ? "disabled" : "")" 
-                               asp-controller="Orders" 
+                            <a class="btn btn-success text-white  @((DateTime.Now > Model.EndDate) ? "disabled" : "")"
+                               asp-controller="Orders"
                                asp-action="AddItemToShoppingCart" asp-route-id="@Model.Id"><i class="bi bi-cart-plus"></i> Add to Cart (Price @Model.Price.ToString("c"))</a>
                         </p>
                     </div>
